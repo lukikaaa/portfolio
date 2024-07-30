@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js",
@@ -11,7 +12,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/, // Periksa file .js dan .jsx
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
@@ -26,19 +27,18 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    extensions: [".js", ".jsx"], // Resolusi untuk ekstensi .js dan .jsx
+  },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
-      filename: "index.html",
     }),
   ],
-  devServer: {
-    static: {
-      directory: path.join(__dirname, "dist"),
-    },
-    compress: true,
-    port: 9000,
+  optimization: {
+    minimize: true,
+    minimizer: [new TerserPlugin()],
   },
-  mode: "development",
+  mode: "production", // Ubah ke "development" jika kamu ingin mode pengembangan
 };
