@@ -1,8 +1,4 @@
 import React from "react";
-import dynaplastImage from "../public/images/dynaplast.png";
-import mitsubishiImage from "../public/images/mitsubishi.jpeg";
-import muiImage from "../public/images/mui.png";
-import progressImage from "../public/images/progress.png";
 import "./Portfolio.css";
 
 const Portfolio = () => {
@@ -12,7 +8,7 @@ const Portfolio = () => {
       year: "(2018-2019)",
       description:
         "Makes sure the right amount of plastic raw materials get into the injection machine",
-      image: dynaplastImage,
+      image: process.env.PUBLIC_URL + "/images/dynaplast.png",
       link: "https://drive.google.com/file/d/1NE4GCzA1KoIYl8Vt0zxr1wC9YI8c6oXI/view",
     },
     {
@@ -20,7 +16,7 @@ const Portfolio = () => {
       year: "(2019-2021)",
       description:
         "The process of welding or joining metal materials using CO and spot welding methods.",
-      image: mitsubishiImage,
+      image: process.env.PUBLIC_URL + "/images/mitsubishi.jpeg",
       link: "https://drive.google.com/file/d/1gbRq_NjpZoPVf2R_IV9fi6ZQ0Fp_ward/view?usp=sharing",
     },
     {
@@ -28,7 +24,7 @@ const Portfolio = () => {
       year: "(2022)",
       description:
         "The objective is to perform chromium plating on plastic materials using chemical substances and liquids.",
-      image: muiImage,
+      image: process.env.PUBLIC_URL + "/images/mui.png",
       link: "https://drive.google.com/file/d/1qzBm42WHp5XVkym42wC966kNa38LOPqi/view?usp=sharing",
     },
     {
@@ -36,7 +32,7 @@ const Portfolio = () => {
       year: "(2022-Present)",
       description:
         "The operator is able to utilize the diecasting machine and diagnose and resolve any issues that may arise with the machine.",
-      image: progressImage,
+      image: process.env.PUBLIC_URL + "/images/progress.png",
       link: "https://linkproyek2.com",
     },
   ];
